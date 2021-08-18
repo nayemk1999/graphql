@@ -30,10 +30,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {" "}
-      {/* <GetUsers /> */}
-      <AllData/>
-      
+      <AllData/> 
     </ApolloProvider>
   );
 }
