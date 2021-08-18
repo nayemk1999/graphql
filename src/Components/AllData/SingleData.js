@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const SingleData = ({user, index}) => {
+    console.log(user.episode);
+    console.log(user.location);
     const [tooltipShow, setTooltipShow] = useState(false);
     const openLeftTooltip = () => {
         setTooltipShow(true)
