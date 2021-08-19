@@ -15,7 +15,7 @@ function AllData() {
 
     return (
         <div className='container'>
-            <div className='flex flex-col  md:flex-row justify-center  flex-wrap gap-3 mt-10'>
+            <div className='flex flex-col  md:flex-row justify-center flex-wrap gap-3 mt-10'>
                 {
                     characters?.map((result, index) => <SingleData index={index} key={index} user={result} />)
                 }

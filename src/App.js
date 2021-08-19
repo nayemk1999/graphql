@@ -6,9 +6,15 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import { onError } from "@apollo/client/link/error";
 import AllData from "./Components/AllData/AllData";
-// import GetUsers from "./Components/GetUsers";
+import Episode from "./Components/AllData/Episode/Episode";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -27,10 +33,24 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: link,
 });
+
 function App() {
   return (
     <ApolloProvider client={client}>
-      <AllData/> 
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <AllData />
+          </Route>
+          <Route path='/home'>
+            <AllData />
+          </Route>
+          <Route path='/episode-page'>
+            <Episode />
+          </Route>
+        </Switch>
+      </Router>
+
     </ApolloProvider>
   );
 }
