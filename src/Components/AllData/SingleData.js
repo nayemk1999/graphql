@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 const SingleData = ({ user, index }) => {
     // console.log(user.episode);
     const history = useHistory();
-    const [episodes, setEpisodes] = useState([]);
     const handleEpisode = (episode, name) => {
         const episodesData = { episode, name }
         history.push({
